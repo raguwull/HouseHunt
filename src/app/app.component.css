@@ -1,0 +1,20 @@
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family);
+}
+app-header {
+  height: var(--header-height);
+}
+.main-content {
+  width: inherit;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+app-nav {
+  height: auto;
+}
+app-main {
+  color: var(--secondary-color);
+  padding: 20px;
+}

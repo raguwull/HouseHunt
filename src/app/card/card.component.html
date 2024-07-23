@@ -1,0 +1,26 @@
+<div class="star-button">
+  <i class="fa fa-star"></i>
+  <span class="star-count">{{ house.rating }}</span>
+</div>
+
+<a class="heart-button" (click)="onClick()">
+  @if(isFavourite){
+  <i class="fa fa-heart"></i>
+  } @else {
+  <i class="fa fa-heart-o"></i>
+  }
+</a>
+
+<img
+  src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?cs=srgb&dl=pexels-binyaminmellish-106399.jpg&fm=jpg"
+  alt="A house image"
+/>
+<div class="desc-div">
+  <div class="name">{{ house.title }}</div>
+  <div class="location">{{ house.location }}</div>
+  <div class="features">
+    &#9679; {{ house.bedrooms + " Bedrooms " }} &#9679;
+    {{ house.bathrooms + " Bathrooms" }}
+  </div>
+  <div class="price">{{ house.price | currency : "INR" }}</div>
+</div>

@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--primary-color);
+  border-right: solid 1px var(--tertiary-color);
+}
+span {
+  color: var(--secondary-color);
+}
+a {
+  text-decoration: none;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+}
+
+a i {
+  color: var(--secondary-color);
+  margin-right: 10px;
+}
+
+@media (max-width: 900px) {
+  span {
+    display: none;
+  }
+  a i {
+    margin-right: 0px;
+  }
+}

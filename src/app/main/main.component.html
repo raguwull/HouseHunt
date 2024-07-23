@@ -1,0 +1,12 @@
+@if (isFetching){
+<p>Fetching the homes...</p>
+} @for (house of houses; track house.id) {
+<app-card [house]="house" (favourite)="onFavourite($event)"></app-card>
+}
+
+<h1 class="favourites">Favourites</h1>
+
+@for (house of favHouses; track house.id){
+<app-card [house]="house" (favourite)="onFavourite($event)"></app-card>
+
+}
