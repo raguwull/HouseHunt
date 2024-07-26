@@ -1,0 +1,15 @@
+<div class="container">
+  <span class="container-title">Location</span>
+  <div class="container-body">
+    <form [formGroup]="locationForm" (ngSubmit)="onSubmit()">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      <input
+        class="location-input"
+        type="text"
+        placeholder="Enter a location"
+        formControlName="location"
+        required
+      />
+    </form>
+  </div>
+</div>

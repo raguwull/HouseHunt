@@ -6,11 +6,12 @@
 }
 :root {
   --fav1: #fafafa;
-  --fav2: #1b1b1b;
-  --fav3: #333;
+  --darkgray: #1b1b1b;
+  --lightgray: #606060;
 
   --ratings-color: #eab300;
-  --heart-color: #ff2164;
+  /* --heart-color: #ff2164; */
+  --heart-color: rgb(200, 0, 0);
 
   --tertiary-color: #d0d0d0;
   --secondary-color: #000000;
@@ -32,6 +33,7 @@
   --padding: 10px;
   --button-padding: 10px 20px;
   --header-height: 40px;
+  --max-width: 500px;
 }
 ::-webkit-scrollbar {
   width: 7px;
@@ -95,4 +97,13 @@ body {
 .note-warning {
   border-left: 5px solid var(--warning-primary);
   background-color: var(--warning-secondary);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

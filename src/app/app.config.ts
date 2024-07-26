@@ -11,6 +11,7 @@ import {
   withInterceptors,
 } from '@angular/common/http';
 import { tap } from 'rxjs';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 function interceptorFunction(
   request: HttpRequest<unknown>,
@@ -35,6 +36,6 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(),
-    provideHttpClient(withInterceptors([interceptorFunction])),
+    provideHttpClient(withInterceptors([interceptorFunction])), provideAnimationsAsync(),
   ],
 };

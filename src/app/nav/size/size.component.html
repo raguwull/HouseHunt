@@ -1,0 +1,16 @@
+<div class="container">
+  <span class="container-title">Size</span>
+  <form [formGroup]="sizeForm" (ngSubmit)="onSubmit()">
+    <div class="container-body size-container">
+      <span>Min</span>
+      <input class="size-input" type="number" formControlName="minSize" />
+      <span>sqft</span>
+    </div>
+    <div class="container-body size-container">
+      <span>Max</span>
+      <input class="size-input" type="number" formControlName="maxSize" />
+      <span>sqft</span>
+    </div>
+    <button style="display: none" type="submit"></button>
+  </form>
+</div>

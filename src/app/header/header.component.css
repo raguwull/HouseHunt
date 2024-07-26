@@ -1,30 +1,35 @@
 :host {
-  position: sticky;
-  top: 0;
   z-index: 100;
-  padding: var(--padding);
+  padding: var(--padding) 30px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background-color: var(--primary-color);
   border-bottom: solid 1px var(--tertiary-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-:host .brand-name {
+.bubble-button {
+  display: none;
+}
+
+.left-side,
+.right-side {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.brand-name {
   font-family: var(--secondary-font-family);
   text-decoration: none;
   color: var(--white);
   font-size: x-large;
-  font-weight: bold;
-}
-
-.hunt-span {
-  font-family: var(--secondary-font-family);
-  background-color: var(--secondary-color);
-  padding: 2px 5px;
-  border-radius: 5px;
-  color: var(--primary-color);
   font-weight: bold;
 }
 
@@ -54,14 +59,124 @@
   display: none;
 }
 
+.plain-text-button-group {
+  border-left: solid 1px var(--tertiary-color);
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.plain-text-button {
+  text-decoration: none;
+  color: var(--lightgray);
+  font-size: 15px;
+}
+.plain-text-button:hover,
+.plain-text-button.active {
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.bubble-button {
+  border-radius: 40px;
+  height: 40px;
+  width: 40px;
+  border: solid 1px var(--tertiary-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  transition: width 0.3s ease, padding 0.3s ease;
+  overflow: hidden;
+}
+
+.bubble-button:hover {
+  width: fit-content;
+  padding: 10px 20px;
+}
+
+.bubble-content {
+  font-size: medium;
+  color: var(--lightgray);
+  display: none;
+  white-space: nowrap;
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  align-items: center;
+}
+
+.bubble-button:hover .bubble-content,
+.bubble-button:focus .bubble-content,
+.bubble-button:active .bubble-content {
+  display: block;
+  opacity: 1;
+}
+
+.fa {
+  font-size: medium;
+  color: var(--lightgray);
+}
+
+.fa-search {
+  margin-left: 10px;
+  transition: transform 0.3s ease, margin-top 0.3s ease;
+}
+.fa-bell-o {
+  transition: transform 0.3s ease;
+}
+.fa-comment-o {
+  transition: transform 0.3s ease;
+}
+
+.bubble-button:hover .fa-search {
+  margin-top: 10px;
+  transform: rotate(90deg);
+}
+
+.bubble-button:hover .fa-bell-o {
+  margin-bottom: 3px;
+  transform: rotate(45deg);
+}
+
+.bubble-button:hover .fa-comment-o {
+  transform: rotateY(180deg);
+}
+
+.input-element {
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: var(--lightgray);
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.input-element::placeholder {
+  color: var(--lightgray);
+  opacity: 0.8;
+}
+
+.menu-button {
+  display: none;
+}
+
 @media (max-width: 700px) {
-  .logout-button {
+  .plain-text-button-group {
     display: none;
   }
-  .fa-sign-out {
+}
+
+@media (max-width: 600px) {
+  .search-button,
+  .bell-button,
+  .inbox-button {
+    display: none;
+  }
+  .menu-button {
     display: block;
-  }
-  .search-group {
-    display: none;
   }
 }

@@ -1,0 +1,23 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$house-hunt-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$black-palette,
+    ),
+    typography: (
+      brand-family: "Montserrat",
+      bold-weight: 900,
+    ),
+    density: (
+      scale: 0,
+    ),
+  )
+);
+
+:root {
+  @include mat.all-component-themes($house-hunt-theme);
+}

@@ -1,0 +1,19 @@
+<div class="container">
+  <span class="container-title">Type</span>
+  <form [formGroup]="typeForm" (submit)="onSubmit()">
+    <div class="type" formArrayName="selectedTypes">
+      @for (type of types; track type.id) {
+      <div class="each-type">
+        <input
+          type="checkbox"
+          [id]="type.id"
+          [value]="type.value"
+          [formControlName]="type.id"
+        />
+        <label [for]="type.id">{{ type.name }}</label>
+      </div>
+      }
+    </div>
+    <button style="display: none" type="submit" (click)="onSubmit()"></button>
+  </form>
+</div>

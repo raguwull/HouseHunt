@@ -1,0 +1,17 @@
+.type {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input {
+  accent-color: var(--secondary-color);
+  border: none;
+  outline: none;
+}
+
+.each-type label {
+  margin-left: 10px;
+  color: var(--lightgray);
+  font-size: medium;
+}

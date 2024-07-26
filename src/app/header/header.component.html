@@ -1,13 +1,46 @@
-<a class="brand-name" href="/"> HouseHunt </a>
+<div class="left-side">
+  <a class="brand-name" href="/"> HouseHunt </a>
 
-<form class="search-group">
-  <input class="search-input" placeholder="Search places" />
-  <a type="submit">
-    <i class="fa fa fa-search" aria-hidden="true"></i>
-  </a>
-</form>
+  <div class="plain-text-button-group">
+    <a class="plain-text-button" href="">Buy</a>
+    <a class="plain-text-button" href="">Sell</a>
+    <a class="plain-text-button" href="">Rent</a>
+    <a class="plain-text-button" href="">Compare</a>
+  </div>
+</div>
 
-<button class="button">
-  <span class="logout-button">Logout</span>
-  <i class="fa fa-sign-out"></i>
-</button>
+<div class="right-side">
+  <button class="bubble-button search-button">
+    <i class="fa fa-search"></i>
+    <span class="bubble-content">
+      <input type="text" class="input-element" placeholder="House Name" />
+    </span>
+  </button>
+
+  <button class="bubble-button bell-button">
+    <i class="fa fa-bell-o"></i>
+    <span class="bubble-content">
+      <p style="font-size: small">Notifications</p>
+    </span>
+  </button>
+
+  <button class="bubble-button inbox-button">
+    <i class="fa fa-comment-o"></i>
+    <span class="bubble-content">
+      <p style="font-size: small">Inbox</p>
+    </span>
+  </button>
+
+  <button
+    mat-button
+    class="bubble-button menu-button"
+    [matMenuTriggerFor]="menu"
+  >
+    <i class="fa fa-bars"></i>
+  </button>
+  <mat-menu #menu="matMenu" class="dropdown-menu">
+    @for (option of options; track $index) {
+    <a mat-menu-item (click)="onToggleMenu(option.name)">{{ option.name }}</a>
+    }
+  </mat-menu>
+</div>

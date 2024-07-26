@@ -1,0 +1,18 @@
+.size-input {
+  outline: none;
+  border: none;
+  width: 50px;
+}
+
+.size-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.size-container:hover {
+  border-color: var(--secondary-color);
+}
